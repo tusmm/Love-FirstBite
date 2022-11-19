@@ -3,13 +3,13 @@ import '@firebase/auth';
 import '@firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'YOUR_KEY_HERE_AIzaSyAOWH',
-  authDomain: 'your-auth-domain-b1234.firebaseapp.com',
-  databaseURL: 'https://your-database-name.firebaseio.com',
-  projectId: 'your-project-id-1234',
-  storageBucket: 'your-project-id-1234.appspot.com',
-  messagingSenderId: '12345-insert-yourse',
-  appId: 'insert yours: 1:1234:web:ee873bd1234c0deb7eba61ce',
+  apiKey: "AIzaSyBhmcVvwTDfEbWW0E4VBZmm-tU0PbB-9Tw",
+  authDomain: "loveatfirstbite-e8ec1.firebaseapp.com",
+  projectId: "loveatfirstbite-e8ec1",
+  storageBucket: "loveatfirstbite-e8ec1.appspot.com",
+  messagingSenderId: "962853600638",
+  appId: "1:962853600638:web:0669563b8f65e6878c472f",
+  measurementId: "G-ZCY3X9RE14"
 };
 
 if (!firebase.apps.length) {
