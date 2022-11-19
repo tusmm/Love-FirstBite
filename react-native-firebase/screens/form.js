@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { MultiSelectExample } from '../components/multiselect';
+import { MultiSelectFoods } from '../components/multiselect';
 import Slider from '@react-native-community/slider';
 
 
@@ -28,7 +28,7 @@ export function FormScreen() {
       <Text>Answer these brief questions so we can help you pick a place!</Text>
       <Text> </Text>
       <Text>Select what you're interested in:</Text>
-      <MultiSelectExample/>
+      <MultiSelectFoods/>
 
       <Text>How hungry are you?</Text>
       <Slider style={{width: 200, height: 20}} 

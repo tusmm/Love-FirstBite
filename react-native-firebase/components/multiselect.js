@@ -14,7 +14,7 @@ const items = [{
     id: "004",
     name: "Japanese"
   }]
-export class MultiSelectExample extends Component {
+export class MultiSelectFoods extends Component {
 
         state = {
           selectedItems : []
@@ -29,7 +29,7 @@ export class MultiSelectExample extends Component {
           const { selectedItems } = this.state;
       
           return (
-            <View style={{ flex: 1 }}>
+            <View style={{ width: 200, height:200 }}>
               <MultiSelect
                 hideTags
                 items={items}
