@@ -1,14 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-<a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
+[comment]: <> (readme template taken from https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -31,7 +21,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/yesssirrr.png" alt="Logo" width="120" height="120">
+    <img src="images/yesssirrr.png" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Love @ First Bite</h3>
@@ -39,14 +29,14 @@
   <p align="center">
     A dating app for restaurants! Find the foods you love without the need to think!
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/tusmm/Love-FirstBite"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/tusmm/Love-FirstBite">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/tusmm/Love-FirstBite/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/tusmm/Love-FirstBite/issues">Request Feature</a>
   </p>
 </div>
 
@@ -155,5 +145,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [ReactNative.js]: https://img.shields.io/badge/ReactNative-10746D?style=for-the-badge&logo=react&logoColor=61DAFB
 [ReactNative-url]: https://reactnative.dev/
 
-[Firebase.com]:  https://img.shields.io/badge/Firebase-6F653D?style=for-the-badge&logo=firebase&logoColor=6F653D
+[Firebase.com]:  https://img.shields.io/badge/Firebase-6F653D?style=for-the-badge&logo=firebase&logoColor=FFCA28
 [Firebase-url]: https://firebase.google.com/
