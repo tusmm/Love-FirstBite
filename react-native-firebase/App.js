@@ -9,7 +9,7 @@ function App() {
   return (
     <NavigationContainer>{
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="" component={FormScreen} />
       </Stack.Navigator>
     }</NavigationContainer>
   );
