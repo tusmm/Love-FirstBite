@@ -29,7 +29,6 @@ export function FormScreen() {
       <Text> </Text>
       <Text>Select what you're interested in:</Text>
       <MultiSelectFoods/>
-
       <Text>How hungry are you?</Text>
       <Slider style={{width: 200, height: 20}} 
         step={1}

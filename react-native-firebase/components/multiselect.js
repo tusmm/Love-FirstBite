@@ -19,7 +19,7 @@ export class MultiSelectFoods extends Component {
         state = {
           selectedItems : []
         };
-      
+        
         
         onSelectedItemsChange = selectedItems => {
           this.setState({ selectedItems });
@@ -35,6 +35,7 @@ export class MultiSelectFoods extends Component {
                 items={items}
                 uniqueKey="id"
                 ref={(component) => { this.multiSelect = component }}
+                onChangeInput={ (text)=> console.log(text)}
                 onSelectedItemsChange={this.onSelectedItemsChange}
               />
             </View>
