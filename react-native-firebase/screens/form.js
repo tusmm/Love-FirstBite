@@ -5,8 +5,23 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { MultiSelectExample } from '../components/multiselect';
 import Slider from '@react-native-community/slider';
 
+
+
 export function FormScreen() {
     const [value, setValue] = useState(0);
+    const items = [{
+      id: "001", 
+      name: "American"
+    }, {
+      id: "002", 
+      name: "Chinese"
+    }, { 
+      id: "003",
+      name: "Korean"
+    }, {
+      id: "004",
+      name: "Japanese"
+    }];
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 
@@ -14,6 +29,7 @@ export function FormScreen() {
       <Text> </Text>
       <Text>Select what you're interested in:</Text>
       <MultiSelectExample/>
+
       <Text>How hungry are you?</Text>
       <Slider style={{width: 200, height: 20}} 
         step={1}

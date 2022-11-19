@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import MultiSelect from 'react-native-multiple-select';
-
 const items = [{
-        id: "001", 
-        name: "American"
-    }, {
-        id: "002", 
-        name: "Chinese"
-    }, { 
-        id: "003",
-        name: "Korean"
-    }, {
-        id: "004",
-        name: "Japanese"
-    }]
-
+    id: "001", 
+    name: "American"
+  }, {
+    id: "002", 
+    name: "Chinese"
+  }, { 
+    id: "003",
+    name: "Korean"
+  }, {
+    id: "004",
+    name: "Japanese"
+  }]
 export class MultiSelectExample extends Component {
 
         state = {
@@ -38,11 +36,7 @@ export class MultiSelectExample extends Component {
                 uniqueKey="id"
                 ref={(component) => { this.multiSelect = component }}
                 onSelectedItemsChange={this.onSelectedItemsChange}
-                submitButtonText="Submit"
               />
-              <View>
-                {this.multiSelect.getSelectedItemsExt(selectedItems)}
-              </View>
             </View>
           );
         }
