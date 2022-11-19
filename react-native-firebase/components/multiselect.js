@@ -23,7 +23,6 @@ export class MultiSelectFoods extends Component {
 
     onSelectedItemsChange = (selectedItems) => {
         this.setState({ selectedItems });
-        console.log('Selected Items: ', selectedItems);
     };
 
     render() {
@@ -45,12 +44,12 @@ export class MultiSelectFoods extends Component {
                     tagRemoveIconColor="#CCC"
                     tagBorderColor="#CCC"
                     tagTextColor="#CCC"
-                    selectedItemTextColor="#CCC"
+                    selectedItemTextColor="#b67c7cff"
                     selectedItemIconColor="#CCC"
                     itemTextColor="#000"
                     displayKey="name"
                     searchInputStyle={{ color: '#CCC' }}
-                    submitButtonColor="#CCC"
+                    submitButtonColor="#a59da4"
                     submitButtonText="Submit"
                 />
             </View>
