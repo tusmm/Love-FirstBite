@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "962853600638",
+    "project_id": "loveatfirstbite-e8ec1",
+    "storage_bucket": "loveatfirstbite-e8ec1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962853600638:android:f2ff72fc2a3e03d18c472f",
+        "android_client_info": {
+          "package_name": "com.reactnativefirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962853600638-mfb7g8vq5qdjflocudejopr8sp6nofks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRaEFXuUyIuZQXYNkNXVNYYxNi11Mm1Sk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962853600638-mfb7g8vq5qdjflocudejopr8sp6nofks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
