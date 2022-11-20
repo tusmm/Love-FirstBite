@@ -17,7 +17,7 @@ const items = [{
 }]
 
 function Radio({ getValueRadio }) {
-    const [value, setValue] = useState('first');
+    const [value, setValue] = useState('1');
 
     function event(newValue) {
         setValue(newValue)
@@ -30,26 +30,26 @@ function Radio({ getValueRadio }) {
                 <View style={styles.radio}>
                     <Text style={styles.label}>$</Text>
                     <View style={styles.button}>
-                        <RadioButton color="#580000ff" value="1"/>
+                        <RadioButton color="#580000ff" value='1'/>
                     </View>
                 </View>
                 <View style={styles.radio}>
                     <Text style={styles.label}>$$</Text>
                     <View style={styles.button}>
-                    <RadioButton color="#580000ff" value="2" />
+                    <RadioButton color="#580000ff" value='2' />
                     </View>
                 </View>
                 <View style={styles.radio}>
                 
                     <Text style={styles.label}>$$$</Text>
                     <View style={styles.button}>
-                    <RadioButton color="#580000ff" value="3" />
+                    <RadioButton color="#580000ff" value='3' />
                     </View>
                 </View>
                 <View style={styles.radio}>
                     <Text style={styles.label}>$$$$</Text>
                     <View style={styles.button}>
-                    <RadioButton color="#580000ff" value="4" />
+                    <RadioButton color="#580000ff" value='4' />
                     </View>
                 </View>
             </View>
