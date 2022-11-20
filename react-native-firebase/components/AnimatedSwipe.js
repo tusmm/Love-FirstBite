@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, Dimensions} from 'react-native';
+import {View, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
 
 import Animated, {
   useSharedValue,
@@ -17,7 +17,7 @@ const deviceWidth = Dimensions.get('window').width
 const deviceHeight = Dimensions.get('window').height
 
 const AnimatedStack = props => {
-  const {data, renderItem, onSwipeRight, onSwipeLeft} = props;
+  const {data, renderItem, onSwipeRight, onSwipeLeft, onPressed} = props;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextIndex, setNextIndex] = useState(currentIndex + 1);
@@ -97,7 +97,8 @@ const AnimatedStack = props => {
   }, [currentIndex, translateX]);
 
   return (
-    <View style={styles.root}>
+    <TouchableOpacity style={styles.root}
+        onPress={()=>{props.onPressed(data[currentIndex])}}>
       {nextProfile && (
         <View style={styles.nextCardContainer}>
           <Animated.View style={[styles.animatedCard, nextCardStyle]}>
@@ -113,7 +114,7 @@ const AnimatedStack = props => {
           </Animated.View>
         </PanGestureHandler>
       )}
-    </View>
+    </TouchableOpacity>
   );
 };
 
