@@ -29,7 +29,7 @@ export default function LoginScreen({navigation}) {
                             return;
                         }
                         const user = firestoreDocument.data()
-                        navigation.navigate('Registration', {user})                 //this navigates after login
+                        navigation.navigate('Form', {user})                 //this navigates after login
                     })
                     .catch(error => {
                         alert(error)
