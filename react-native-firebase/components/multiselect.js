@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import MultiSelect from 'react-native-multiple-select';
-const items = [{
-    id: "001",
-    name: "American"
-}, {
-    id: "002",
-    name: "Chinese"
-}, {
-    id: "003",
-    name: "Korean"
-}, {
-    id: "004",
-    name: "Japanese"
-}]
+import items from '../data/cuisines';
 
 export class MultiSelectFoods extends Component {
-
+    constructor(props){
+        super(props);
+    }
     state = {
         selectedItems: []
     };
 
+    getValue(value){
+        console.log("value")
+        console.log(value)
+        this.props.getValue(value)
+    }
+
     onSelectedItemsChange = (selectedItems) => {
         this.setState({ selectedItems });
-        console.log('Selected Items: ', selectedItems);
+        var item = []
+        selectedItems.forEach(function(number){
+            item.push(number)
+        });
+        this.props.getValue(item)
+        // console.log(item)
     };
 
     render() {
@@ -45,12 +46,12 @@ export class MultiSelectFoods extends Component {
                     tagRemoveIconColor="#CCC"
                     tagBorderColor="#CCC"
                     tagTextColor="#CCC"
-                    selectedItemTextColor="#CCC"
+                    selectedItemTextColor="#b67c7cff"
                     selectedItemIconColor="#CCC"
                     itemTextColor="#000"
                     displayKey="name"
                     searchInputStyle={{ color: '#CCC' }}
-                    submitButtonColor="#CCC"
+                    submitButtonColor="#a59da4"
                     submitButtonText="Submit"
                 />
             </View>

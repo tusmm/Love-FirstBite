@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
-import { View } from 'react-native';
-import { RadioButton, Text } from 'react-native-paper';
+import { View, StyleSheet } from 'react-native';
+import { Button, RadioButton, Text } from 'react-native-paper';
 
 const items = [{
     id: "011",
@@ -16,31 +16,32 @@ const items = [{
     name: "$$$$"
 }]
 
-
-
-const Radio = () => {
+function Radio({getValueRadio}){
     const [value, setValue] = useState('first');
 
+    function event(newValue) {
+        setValue(newValue)
+        getValueRadio(newValue)
+    }
+
     return (
-        <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
-            <View>
-                <Text>First</Text>
-                <RadioButton value="first" />
-            </View>
-            <View>
-                <Text>Second</Text>
-                <RadioButton value="second" />
-            </View>
-            <View>
-                <Text>Third</Text>
-                <RadioButton value="third" />
-            </View>
-            <View>
-                <Text>Fourth</Text>
-                <RadioButton value="fourth" />
-            </View>
-        </RadioButton.Group>
+        <View style={{flexDirection:"row"}}>
+        <RadioButton.Group onValueChange={ value => event(value)} value={value}>
+            <RadioButton.Item label="$" labelStyle={styles.label} color="#580000ff" value="first" />
+            <RadioButton.Item label="$$" labelStyle={styles.label} color="#580000ff" value="second" />
+            <RadioButton.Item label="$$$" labelStyle={styles.label} color="#580000ff" value="third" />
+            <RadioButton.Item label="$$$$" labelStyle={styles.label} color="#580000ff" value="fourth" />
+        </RadioButton.Group></View>
     );
 };
 
+const styles = StyleSheet.create({
+    label: {
+        fontSize: 14
+    }
+}
+
+)
+
 export default Radio;
+export var value;
