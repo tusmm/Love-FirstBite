@@ -52,7 +52,7 @@ export default function PressGetter(props) {
 let val;
 
 export function SwipeScreen({navigation}){
-
+    
     const onSwipeLeft = restaurant => {
         console.log('swipe left: ', restaurant.name);
         leftSwipes.push(restaurant.name)
@@ -64,7 +64,8 @@ export function SwipeScreen({navigation}){
     };
 
     const onPressed = restaurant => {
-        console.log('pressed: ', restaurant.name);
+        val = restaurant;
+        navigation.navigate('Gallery')
     };
 
     return (
