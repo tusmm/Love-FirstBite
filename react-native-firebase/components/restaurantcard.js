@@ -1,24 +1,25 @@
 import React from 'react'
-import {Text, ImageBackground, View, StyleSheet} from 'react-native';
-
+import {Text, ImageBackground, View, StyleSheet, Dimensions} from 'react-native';
+const deviceWidth = Dimensions.get('window').width
+const deviceHeight = Dimensions.get('window').height
 const styles = StyleSheet.create({
     food_card: {
-        width: '85%',
-        height: '85%',
+        width: deviceWidth * .8,
+        height: deviceHeight * .8,
         borderRadius: 10, 
         backgroundColor: '#fefefe',
-        elevation: 11,
+        elevation: 10,
     },
     food_image: {
-        width: '100%', 
-        height: '100%',
+        width: deviceWidth * .8, 
+        height: deviceHeight * .8,
         borderRadius: 10,
         overflow: 'hidden', 
         justifyContent: 'flex-end',
     },
     restaurant_name: {
         fontSize: 30, 
-        color: 'black',
+        color: 'white',
         fontWeight: 'bold',
     },
     name_padding: {
@@ -43,4 +44,3 @@ const Card = props => {
 };
 
 export default Card;
-

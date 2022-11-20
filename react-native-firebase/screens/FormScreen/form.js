@@ -1,8 +1,9 @@
 import React, { useState, } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Pressable } from 'react-native';
 import { MultiSelectFoods } from '../../components/multiselect';
 import Slider from '@react-native-community/slider';
 import Radio from '../../components/radiobutton'
+import styles from './styles';
 
 
 export default function FormScreen({navigation}) {
@@ -27,7 +28,7 @@ export default function FormScreen({navigation}) {
   function onFormSubmit(){
     console.log(radio)
     console.log(multiple)
-    navigation.navigate('Restaurant')
+    navigation.navigate('Swipe')
   }
 
   function getValueRadio(value) {
@@ -42,30 +43,29 @@ export default function FormScreen({navigation}) {
   };
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.container}>
 
-      <Text>Answer these brief questions so we can help you pick a place!</Text>
+      <Text style={styles.title}>Answer these brief questions so we can help you pick a place!</Text>
       <Text> </Text>
-      <Text>Select what you're interested in:</Text>
+      <Text style={styles.titlesmall}>Select what you're interested in:</Text>
       <MultiSelectFoods getValue={getValueMulti}/>
-      <Text>selected: </Text>
-      <Text>How hungry are you?</Text>
+      <Text style={styles.titlesmall}>How hungry are you?</Text>
       <Slider style={{ width: 200, height: 20, color: '#8a534b' }}
         step={1}
         minimumValue={0}
         maximumValue={100}
         value={value}
         onValueChange={slideValue => setValue(slideValue)}
-        minimumTrackTintColor="#8F6E6F"
-        maximumTrackTintColor="#B67C7C"
+        minimumTrackTintColor="#580000"
+        maximumTrackTintColor="#8F6E6F"
         thumbTintColor="#580000"
       />
-      <Text>
-        Slide value: {value}%
-      </Text>
-      <Text>How much do you want to spend?</Text>
+      <Text></Text>
+      <Text style={styles.titlesmall} >How much do you want to spend?</Text>
       <Radio getValueRadio={getValueRadio}/>
-      <Button title="Submit" onPress={() => onFormSubmit()} color="#580000" />
+      <Pressable style={styles.button} onPress={() => onFormSubmit()}>
+      <Text style={styles.buttonTitle}>Submit</Text>
+    </Pressable>
 
 
     </View>

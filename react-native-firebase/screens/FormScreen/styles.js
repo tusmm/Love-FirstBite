@@ -7,7 +7,23 @@ export default StyleSheet.create({
         backgroundColor: '#b67c7cff'
     },
     title: {
-
+        marginTop:50,
+        marginLeft:20,
+        marginRight:20,
+        textAlign: 'center',
+        color: 'white',
+        fontSize: 16,
+        fontWeight: "bold",
+        alignItems:'center'
+    },
+    titlesmall: {
+        marginLeft:20,
+        marginRight:20,
+        marginBottom:10,
+        textAlign: 'center',
+        color: 'white',
+        fontSize: 16,
+        alignItems:'center'
     },
     logo: {
         flex: 1,
@@ -33,6 +49,7 @@ export default StyleSheet.create({
         marginRight: 30,
         marginTop: 20,
         height: 48,
+        width:70,
         borderRadius: 5,
         alignItems: "center",
         justifyContent: 'center'
