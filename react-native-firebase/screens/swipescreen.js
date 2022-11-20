@@ -1,56 +1,50 @@
 import React from 'react';
-import {View, StyleSheet, Dimensions} from 'react-native';
+import {View, StyleSheet, Dimensions, Text, Image} from 'react-native';
 import Card from '../components/restaurantcard';
 import restaurants from '../data/restaurants';
 
 import AnimatedStack from '../components/AnimatedSwipe';
 
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
-
-import { collection, doc, Firestore, setDoc } from "firebase/firestore"; 
-import { firebase } from '../../src/firebase/config'
+const deviceWidth = Dimensions.get('window').width
+const deviceHeight = Dimensions.get('window').height
 
 const styles = StyleSheet.create({
     card_container: {
         justifyContent: 'center', 
         alignItems: 'center',
         flex: 1,
-        width: Dimensions.get('window').width,
+        width: deviceWidth,
+        backgroundColor: '#b67c7cff'
     },
 });
 
 var leftSwipes = []
 var rightSwipes = []
 
-export function SwipeScreen(){
-    const userPref = collection(firebase.firestore(), "userPref");
-    const auth = getAuth();
-    const user = auth.currentUser;
-    const uid = user.uid;
+export default function PressGetter(props) {
+    return(
+        props.receiveVal(val)
+    );
+}
 
-    async function navigateMatchScreen() {
-        await setDoc(doc(userPref, uid), {
-            locations: multiple, cost: radio, hunger: value});
-          navigation.navigate('Swipe')
-    }
+let val;
+
+export function SwipeScreen({navigation}){
 
     const onSwipeLeft = restaurant => {
-        console.log('swipe left: ', restaurant.name);
+        props.receiveVal(restaurant.name);
         leftSwipes.push(restaurant.name)
     };
     
     const onSwipeRight = restaurant => {
         console.log('swipe right: ', restaurant.name);
         rightSwipes.push(restaurant.name)
-        if(rightSwipes.length == 3){
-            navigateMatchScreen
-        }
     };
 
-
-    
     const onPressed = restaurant => {
-        console.log('pressed: ', restaurant.name);
+        val = restaurant.name;
+        navigation.navigate('Gallery')
     };
 
     return (
