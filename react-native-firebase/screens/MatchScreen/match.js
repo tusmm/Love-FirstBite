@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Animated, Text, Image} from 'react-native';
 import restaurants from '../../data/restaurants';
 import logo_img from '../../assets/logo.png';
-import { getChosen } from './MatchScreen';
+import { getRightSwipes } from '../swipescreen';
 /* 
 import Card from '../../components/restaurantcard';
 
@@ -15,6 +15,19 @@ export function Match(){
         </View>
     )
 }*/
+var rightSwipes = []
+
+
+export function getChosen(){
+  rightSwipes = getRightSwipes();
+  return rightSwipes[Math.floor(Math.random() * (3))];
+}
+
+export function numSwipesMet(props){
+  rightSwipes = props.rightSwipes;
+  
+}
+
 class ImageLoader extends Component {
   state = {
     opacity: new Animated.Value(0),
@@ -51,9 +64,9 @@ class ImageLoader extends Component {
     );
   }
 }
-
 export function ResultsScreen(){
-    return(
+  const selected = getChosen();
+  return(
     <View style={styles.container}>
         <Image
             style={styles.logo}
@@ -65,9 +78,9 @@ export function ResultsScreen(){
         <ImageLoader
         style={styles.image}
         // uri: getChosen().image
-        source={{ uri: restaurants[0].image}}
+        source={{ uri: selected.image}}
         />
-        <Text style = {styles.name_match}>{restaurants[0].name}</Text>
+        <Text style = {styles.name_match}>{selected.name}</Text>
     </View>
     );
 };

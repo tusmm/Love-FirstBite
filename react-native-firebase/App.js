@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React, { useEffect, useState } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { LoginScreen, HomeScreen, RegistrationScreen, FormScreen, MatchScreen} from './screens'
+import { LoginScreen, HomeScreen, RegistrationScreen, FormScreen} from './screens'
 import { ResultsScreen } from './screens/MatchScreen/match'
 import { RScreen } from './screens/restaurant'
 import {SwipeScreen} from './screens/swipescreen'
@@ -32,7 +32,6 @@ export default function App() {
             <Stack.Screen name="Restaurant" component={RScreen} />
             <Stack.Screen name="Swipe" component={SwipeScreen} />
             <Stack.Screen name="Gallery" component={RScreen} />
-            <Stack.Screen name="Match" component={MatchScreen} />
             <Stack.Screen name="Results" component={ResultsScreen} />
 
           </>
