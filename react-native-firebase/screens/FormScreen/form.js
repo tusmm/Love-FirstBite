@@ -36,8 +36,6 @@ export default function FormScreen({navigation}) {
   async function onFormSubmit() {
     await setDoc(doc(userPref, uid), {
       locations: multiple, cost: radio, hunger: value});
-    //console.log(radio)
-    //console.log(multiple)
     navigation.navigate('Swipe')
   }
 
@@ -46,10 +44,8 @@ export default function FormScreen({navigation}) {
   };
 
   getValueMulti = (value) => {
-    multiple = []
-    value.forEach(function(number){
-      multiple.push(number)
-  });
+    multiple = value
+    console.log(multiple)
   };
 
   return (
