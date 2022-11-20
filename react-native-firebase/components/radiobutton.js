@@ -16,7 +16,7 @@ const items = [{
     name: "$$$$"
 }]
 
-function Radio({getValueRadio}){
+function Radio({ getValueRadio }) {
     const [value, setValue] = useState('first');
 
     function event(newValue) {
@@ -25,19 +25,56 @@ function Radio({getValueRadio}){
     }
 
     return (
-        <View style={{flexDirection:"row"}}>
-        <RadioButton.Group onValueChange={ value => event(value)} value={value}>
-            <RadioButton.Item label="$" labelStyle={styles.label} color="#580000ff" value="first" />
-            <RadioButton.Item label="$$" labelStyle={styles.label} color="#580000ff" value="second" />
-            <RadioButton.Item label="$$$" labelStyle={styles.label} color="#580000ff" value="third" />
-            <RadioButton.Item label="$$$$" labelStyle={styles.label} color="#580000ff" value="fourth" />
-        </RadioButton.Group></View>
+        <RadioButton.Group onValueChange={value => event(value)} value={value} style={{ flexDirection: 'row' }}>
+            <View style={{ flexDirection: "row", marginTop:10 }}>
+                <View style={styles.radio}>
+                    <Text style={styles.label}>$</Text>
+                    <View style={styles.button}>
+                        <RadioButton color="#580000ff" value="first"/>
+                    </View>
+                </View>
+                <View style={styles.radio}>
+                    <Text style={styles.label}>$$</Text>
+                    <View style={styles.button}>
+                    <RadioButton color="#580000ff" value="second" />
+                    </View>
+                </View>
+                <View style={styles.radio}>
+                
+                    <Text style={styles.label}>$$$</Text>
+                    <View style={styles.button}>
+                    <RadioButton color="#580000ff" value="third" />
+                    </View>
+                </View>
+                <View style={styles.radio}>
+                    <Text style={styles.label}>$$$$</Text>
+                    <View style={styles.button}>
+                    <RadioButton color="#580000ff" value="fourth" />
+                    </View>
+                </View>
+            </View>
+        </RadioButton.Group>
     );
 };
 
 const styles = StyleSheet.create({
     label: {
-        fontSize: 14
+        fontSize: 20,
+        color: '#1f0404',
+        textAlign:'center'
+    },
+
+    radio: {
+        alignContent:'center', 
+        justifyContent:'center',
+        textAlign:'center',
+        width:70, 
+    },
+
+    button: {
+        alignContent:'center',
+        width:40,
+        marginLeft: 15
     }
 }
 

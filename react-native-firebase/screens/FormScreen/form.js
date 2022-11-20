@@ -57,7 +57,7 @@ export default function FormScreen({navigation}) {
         value={value}
         onValueChange={slideValue => setValue(slideValue)}
         minimumTrackTintColor="#580000"
-        maximumTrackTintColor="#8F6E6F"
+        maximumTrackTintColor="#4a3839"
         thumbTintColor="#580000"
       />
       <Text></Text>
