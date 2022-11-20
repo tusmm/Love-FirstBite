@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Animated, Text, Image} from 'react-native';
 import restaurants from '../../data/restaurants';
-import logo_img from '../../assets/logo.png'
+import logo_img from '../../assets/logo.png';
+import { getChosen } from './MatchScreen';
 /* 
 import Card from '../../components/restaurantcard';
 
@@ -60,7 +61,7 @@ export function OneTrueMatchScreen(){
             resizeMode="contain"
             >
         </Image>
-        <Text style = {styles.match_text}>It's a Match!</Text>
+        <Text style = {styles.match_text}>{getChosen}</Text>
         <ImageLoader
         style={styles.image}
         source={{ uri: restaurants[0].image}}

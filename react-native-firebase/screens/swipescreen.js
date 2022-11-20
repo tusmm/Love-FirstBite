@@ -10,20 +10,21 @@ import { collection, doc, Firestore, setDoc } from "firebase/firestore";
 import { firebase } from '../src/firebase/config'
 
 class rest {
-    constructor (id, name, image) {
+    constructor (id, name, image, imgarray) {
         this.id = id;
         this.name = name;
         this.image = image;
+        this.imgarray = imgarray;
     }
     toString() {
-        return this.id + ', ' + this.name + ', ' + this.image;
+        return this.id + ', ' + this.name + ', ' + this.image + ', ' + this.imgarray;
     }
 }
 
 const q = []
 firebase.firestore().collection("restaurants").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-        q.push(new rest(doc.id, doc.data().name, doc.data().imgarray[1]));
+        q.push(new rest(doc.id, doc.data().name, doc.data().imgarray[1], doc.data().imgarray));
     });
 });
 
@@ -52,19 +53,21 @@ export default function PressGetter(props) {
 let val;
 
 export function SwipeScreen({navigation}){
-
+    
     const onSwipeLeft = restaurant => {
         console.log('swipe left: ', restaurant.name);
-        leftSwipes.push(restaurant.name)
+        leftSwipes.push(restaurant)
     };
     
     const onSwipeRight = restaurant => {
         console.log('swipe right: ', restaurant.name);
-        rightSwipes.push(restaurant.name)
+        rightSwipes.push(restaurant)
     };
 
     const onPressed = restaurant => {
-        console.log('pressed: ', restaurant.name);
+        val = restaurant;
+        console.log(val)
+        navigation.navigate('Gallery')
     };
 
     return (
