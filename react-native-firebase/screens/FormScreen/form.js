@@ -4,10 +4,17 @@ import { MultiSelectFoods } from '../../components/multiselect';
 import Slider from '@react-native-community/slider';
 import Radio from '../../components/radiobutton'
 import styles from './styles';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { collection, doc, Firestore, setDoc } from "firebase/firestore"; 
+import { firebase } from '../../src/firebase/config'
 
 
 export default function FormScreen({navigation}) {
+  const userPref = collection(firebase.firestore(), "userPref");
   const [value, setValue] = useState(0);
+  const auth = getAuth();
+  const user = auth.currentUser;
+  const uid = user.uid;
   const items = [{
     id: "001",
     name: "American"
@@ -24,10 +31,13 @@ export default function FormScreen({navigation}) {
 
   var multiple = []
   var radio = 'first'
+
   
-  function onFormSubmit(){
-    console.log(radio)
-    console.log(multiple)
+  async function onFormSubmit() {
+    await setDoc(doc(userPref, uid), {
+      locations: multiple, cost: radio, hunger: value});
+    //console.log(radio)
+    //console.log(multiple)
     navigation.navigate('Swipe')
   }
 
