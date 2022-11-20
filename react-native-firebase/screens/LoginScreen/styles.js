@@ -10,6 +10,7 @@ export default StyleSheet.create({
         
     },
     logo: {
+        marginTop:"30%",
         flex: 1,
         height: 120,
         width: 120,
