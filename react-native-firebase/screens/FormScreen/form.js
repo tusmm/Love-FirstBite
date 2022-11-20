@@ -60,7 +60,7 @@ export default function FormScreen({navigation}) {
   return (
     <View style={styles.container}>
 
-      <Text style={styles.title}>Answer these brief questions so we can help you pick a place!</Text>
+      <Text style={styles.title}>Let's help you find your next favorite restaurant!</Text>
       <Text> </Text>
       <Text style={styles.titlesmall}>Select what you're interested in:</Text>
       <MultiSelectFoods getValue={getValueMulti}/>

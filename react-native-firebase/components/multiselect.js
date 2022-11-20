@@ -23,8 +23,6 @@ export class MultiSelectFoods extends Component {
         selectedItems.forEach(function(number){
             item.push(number)
         });
-        console.log("select change")
-        console.log(selectedItems)
         this.props.getValue(selectedItems)
     };
 
