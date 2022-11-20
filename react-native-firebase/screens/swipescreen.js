@@ -6,6 +6,27 @@ import restaurants from '../data/restaurants';
 import AnimatedStack from '../components/AnimatedSwipe';
 
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import { collection, doc, Firestore, setDoc } from "firebase/firestore"; 
+import { firebase } from '../src/firebase/config'
+
+class rest {
+    constructor (id, name, image) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+    }
+    toString() {
+        return this.id + ', ' + this.name + ', ' + this.image;
+    }
+}
+
+const q = []
+firebase.firestore().collection("restaurants").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        q.push(new rest(doc.id, doc.data().name, doc.data().imgarray[1]));
+    });
+});
+
 const deviceWidth = Dimensions.get('window').width
 const deviceHeight = Dimensions.get('window').height
 
@@ -43,15 +64,14 @@ export function SwipeScreen({navigation}){
     };
 
     const onPressed = restaurant => {
-        val = restaurant.name;
-        navigation.navigate('Gallery')
+        console.log('pressed: ', restaurant.name);
     };
 
     return (
         <View style = {styles.card_container}>
             <GestureHandlerRootView>
                 <AnimatedStack 
-                data={restaurants}
+                data={q}
                 renderItem={({item}) => <Card restaurant={item} />}
                 onSwipeLeft={onSwipeLeft}
                 onSwipeRight={onSwipeRight}
