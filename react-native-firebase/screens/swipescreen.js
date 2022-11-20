@@ -1,50 +1,56 @@
 import React from 'react';
-import {View, StyleSheet, Dimensions, Text, Image} from 'react-native';
+import {View, StyleSheet, Dimensions} from 'react-native';
 import Card from '../components/restaurantcard';
 import restaurants from '../data/restaurants';
 
 import AnimatedStack from '../components/AnimatedSwipe';
 
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
-const deviceWidth = Dimensions.get('window').width
-const deviceHeight = Dimensions.get('window').height
+
+import { collection, doc, Firestore, setDoc } from "firebase/firestore"; 
+import { firebase } from '../../src/firebase/config'
 
 const styles = StyleSheet.create({
     card_container: {
         justifyContent: 'center', 
         alignItems: 'center',
         flex: 1,
-        width: deviceWidth,
-        backgroundColor: '#b67c7cff'
+        width: Dimensions.get('window').width,
     },
 });
 
 var leftSwipes = []
 var rightSwipes = []
 
-export default function PressGetter(props) {
-    return(
-        props.receiveVal(val)
-    );
-}
+export function SwipeScreen(){
+    const userPref = collection(firebase.firestore(), "userPref");
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const uid = user.uid;
 
-let val;
-
-export function SwipeScreen({navigation}){
+    async function navigateMatchScreen() {
+        await setDoc(doc(userPref, uid), {
+            locations: multiple, cost: radio, hunger: value});
+          navigation.navigate('Swipe')
+    }
 
     const onSwipeLeft = restaurant => {
-        props.receiveVal(restaurant.name);
+        console.log('swipe left: ', restaurant.name);
         leftSwipes.push(restaurant.name)
     };
     
     const onSwipeRight = restaurant => {
         console.log('swipe right: ', restaurant.name);
         rightSwipes.push(restaurant.name)
+        if(rightSwipes.length == 3){
+            navigateMatchScreen
+        }
     };
 
+
+    
     const onPressed = restaurant => {
-        val = restaurant.name;
-        navigation.navigate('Gallery')
+        console.log('pressed: ', restaurant.name);
     };
 
     return (
