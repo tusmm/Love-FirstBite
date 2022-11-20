@@ -1,8 +1,8 @@
 import React, { useState, } from 'react';
 import { View, Text, Button } from 'react-native';
-import { MultiSelectFoods } from '../components/multiselect';
+import { MultiSelectFoods } from '../../components/multiselect';
 import Slider from '@react-native-community/slider';
-import Radio from '../components/radiobutton'
+import Radio from '../../components/radiobutton'
 
 
 export function FormScreen() {
