@@ -16,6 +16,9 @@ const SWIPE_VELOCITY = 800;
 const deviceWidth = Dimensions.get('window').width
 const deviceHeight = Dimensions.get('window').height
 
+import yum from '../assets/yum.png';
+import nah from '../assets/confounded.png';
+
 const AnimatedStack = props => {
   const {data, renderItem, onSwipeRight, onSwipeLeft, onPressed} = props;
 
@@ -60,6 +63,14 @@ const AnimatedStack = props => {
       [-hiddenTranslateX, 0, hiddenTranslateX],
       [1, 0.5, 1],
     ),
+  }));
+
+  const yumStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(translateX.value, [0, hiddenTranslateX / 5], [0, 1]),
+  }));
+
+  const nahStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(translateX.value, [0, -hiddenTranslateX / 5], [0, 1]),
   }));
 
   const gestureHandler = useAnimatedGestureHandler({
@@ -110,6 +121,16 @@ const AnimatedStack = props => {
       {currentProfile && (
         <PanGestureHandler onGestureEvent={gestureHandler}>
           <Animated.View style={[styles.animatedCard, cardStyle]}>
+          <Animated.Image
+              source={yum}
+              style={[styles.yummy, {right: 12}, yumStyle]}
+              resizeMode="contain"
+            />
+            <Animated.Image
+              source={nah}
+              style={[styles.yummy, {left: 12}, nahStyle]}
+              resizeMode="contain"
+            />
             {renderItem({item: currentProfile})}
           </Animated.View>
         </PanGestureHandler>
@@ -136,6 +157,14 @@ const styles = StyleSheet.create({
 
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  yummy: {
+    width: 160,
+    height: 130,
+    position: 'absolute',
+    top: 10,
+    zIndex: 1,
+    elevation: 1,
   },
 });
 
