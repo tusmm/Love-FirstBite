@@ -5,7 +5,7 @@ import Slider from '@react-native-community/slider';
 import Radio from '../../components/radiobutton'
 
 
-export function FormScreen() {
+export default function FormScreen() {
   const [value, setValue] = useState(0);
   const items = [{
     id: "001",
