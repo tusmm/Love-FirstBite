@@ -33,7 +33,7 @@ let val;
 export function SwipeScreen({navigation}){
 
     const onSwipeLeft = restaurant => {
-        props.receiveVal(restaurant.name);
+        console.log('swipe left: ', restaurant.name);
         leftSwipes.push(restaurant.name)
     };
     
