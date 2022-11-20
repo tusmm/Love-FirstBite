@@ -16,6 +16,7 @@ const Rest = (props) => {
 
 const Gallery = (props) => {
   if (props.name == "dump house") {
+    console.log("dumppppy");
     return(
       <View style={styles.background}>
         <Rest name={props.name} />
@@ -58,6 +59,10 @@ const Gallery = (props) => {
 
 export function RScreen() {
 
+    // const restaurant = collection(db, "restaurant");
+    // const q = query(restaurant, where("name", "==", "a"));
+    // const urls = [];
+    // const ID == thing, use for below
     const receiveVal = (value) => {
       return(
           <Gallery name={value} />
@@ -72,11 +77,11 @@ export function RScreen() {
 
 const styles = StyleSheet.create({
     background: {
-      backgroundColor: '#b67c7cff',
+      backgroundColor: 'white',
       flex: 1,
     },
     words_background: {
-      backgroundColor: '#b67c7cff',
+      backgroundColor: 'white',
       flex: 0,
     },
     headline_text: {
