@@ -61,10 +61,10 @@ export function ResultsScreen(){
             resizeMode="contain"
             >
         </Image>
-        <Text style = {styles.match_text}>{getChosen}</Text>
+        <Text style = {styles.match_text}>It's a Match!</Text>
         <ImageLoader
         style={styles.image}
-        source={{ uri: restaurants[0].image}}
+        source={{ uri: getChosen().image}}
         />
     </View>
     );
