@@ -16,17 +16,17 @@ const items = [{
     name: "$$$$"
 }]
 
-const Radio = () => {
+function Radio({getValueRadio}){
     const [value, setValue] = useState('first');
 
     function event(newValue) {
         setValue(newValue)
-        console.log(newValue)
+        getValueRadio(newValue)
     }
 
     return (
         <View style={{flexDirection:"row"}}>
-        <RadioButton.Group onValueChange={value => event(value)} value={value}>
+        <RadioButton.Group onValueChange={ value => event(value)} value={value}>
             <RadioButton.Item label="$" labelStyle={styles.label} color="#580000ff" value="first" />
             <RadioButton.Item label="$$" labelStyle={styles.label} color="#580000ff" value="second" />
             <RadioButton.Item label="$$$" labelStyle={styles.label} color="#580000ff" value="third" />

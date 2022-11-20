@@ -21,13 +21,24 @@ export function FormScreen() {
     name: "Japanese"
   }];
 
-  var multiple = 0
-  var slide = 0
-  var radio = 0
+  var multiple = []
+  var radio = 'first'
   
   function onFormSubmit(){
-    console.log("button clicked")
+    console.log(radio)
+    console.log(multiple)
   }
+
+  function getValueRadio(value) {
+    radio = value;
+  };
+
+  getValueMulti = (value) => {
+    multiple = []
+    value.forEach(function(number){
+      multiple.push(number)
+  });
+  };
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -35,7 +46,8 @@ export function FormScreen() {
       <Text>Answer these brief questions so we can help you pick a place!</Text>
       <Text> </Text>
       <Text>Select what you're interested in:</Text>
-      <MultiSelectFoods style={{ zIndex: 1 }} />
+      <MultiSelectFoods getValue={getValueMulti}/>
+      <Text>selected: </Text>
       <Text>How hungry are you?</Text>
       <Slider style={{ width: 200, height: 20, color: '#8a534b' }}
         step={1}
@@ -51,7 +63,7 @@ export function FormScreen() {
         Slide value: {value}%
       </Text>
       <Text>How much do you want to spend?</Text>
-      <Radio/>
+      <Radio getValueRadio={getValueRadio}/>
       <Button title="Submit" onPress={() => onFormSubmit()} color="#580000" />
 
 
