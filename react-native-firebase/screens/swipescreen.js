@@ -19,10 +19,18 @@ const styles = StyleSheet.create({
 var leftSwipes = []
 var rightSwipes = []
 
-export function SwipeScreen(){
+export default function PressGetter(props) {
+    return(
+        props.receiveVal(val)
+    );
+}
+
+let val;
+
+export function SwipeScreen({navigation}){
 
     const onSwipeLeft = restaurant => {
-        console.log('swipe left: ', restaurant.name);
+        props.receiveVal(restaurant.name);
         leftSwipes.push(restaurant.name)
     };
     
@@ -32,7 +40,8 @@ export function SwipeScreen(){
     };
 
     const onPressed = restaurant => {
-        console.log('pressed: ', restaurant.name);
+        val = restaurant.name;
+        navigation.navigate('Gallery')
     };
 
     return (
