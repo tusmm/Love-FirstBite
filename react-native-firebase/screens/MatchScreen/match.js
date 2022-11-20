@@ -64,8 +64,10 @@ export function ResultsScreen(){
         <Text style = {styles.match_text}>It's a Match!</Text>
         <ImageLoader
         style={styles.image}
-        source={{ uri: getChosen().image}}
+        // uri: getChosen().image
+        source={{ uri: restaurants[0].image}}
         />
+        <Text style = {styles.name_match}>{restaurants[0].name}</Text>
     </View>
     );
 };
@@ -84,12 +86,17 @@ const styles = StyleSheet.create({
   },
   match_text: {
     fontSize: 30,
-    height: 100,
+    height: 75,
+    color: '#580000ff',
+    fontWeight: 'bold',
+  },
+  name_match: {
+    fontSize: 25, 
     color: '#fff6f6ff',
     fontWeight: 'bold',
   },
   logo: {
-    marginTop:"-15%",
+    marginTop:"-25%",
     height: 100,
     width: 150,
     margin: 40,
