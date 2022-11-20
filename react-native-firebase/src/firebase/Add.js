@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Keyboard, ImageBackgroundComponent } from 'react-native'
-import React, { useSTate} from 'react';
+import React, { useState} from 'react';
 import { firebase} from './config';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Home = () => {
-    const todoRed = firebase.firestore().collection('newData');
+    const todoRef = firebase.firestore().collection('newData');
     const [addData, setAddData] = useState('');
 
     // add a new field
@@ -12,7 +12,7 @@ const Home = () => {
         // check if we have new field data
         if (addData && addData.length > 0) {
             // get the time stamp
-            const timestamp = firebase.firestore.FieldValue.serverTiestamp();
+            const timestamp = firebase.firestore.FieldValue.serverTimestamp();
             const data = {
                 heading: addData,
                 createdAt: timestamp
@@ -34,7 +34,7 @@ const Home = () => {
 
     return (
         <View style={{flex:1, justifyContent:'center'}}>
-            <View style={StyleSheet.formContainer}>
+            <View style={styles.formContainer}>
                 <TextInput 
                     style={styles.input}
                     placeholder = "POOPOOPOOPOO"
@@ -46,7 +46,7 @@ const Home = () => {
                     autoCapitalize='none'
                 />
                 <TouchableOpacity style={styles.button} onPress={addField}>
-                    <Text style={styles.buttonText}>POOPOOPOOPOO</Text>
+                    <Text style={styles.buttonText}>POOP</Text>
                 </TouchableOpacity>
             </View>
         </View>
