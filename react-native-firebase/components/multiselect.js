@@ -24,7 +24,6 @@ export class MultiSelectFoods extends Component {
             item.push(number)
         });
         this.props.getValue(item)
-        // console.log(item)
     };
 
     render() {
