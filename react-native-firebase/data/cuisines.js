@@ -10,4 +10,8 @@ export default[{
 }, {
     id: "4",
     name: "Japanese"
+}, 
+{
+    id: "5",
+    name: "French"
 }];
