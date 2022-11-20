@@ -7,9 +7,10 @@ export default StyleSheet.create({
         backgroundColor: '#b67c7cff'
     },
     title: {
-        marginTop:50,
+        marginTop:'35%',
         marginLeft:20,
         marginRight:20,
+        width:300,
         textAlign: 'center',
         color: 'white',
         fontSize: 16,
@@ -17,11 +18,13 @@ export default StyleSheet.create({
         alignItems:'center'
     },
     titlesmall: {
+        marginTop:10,
         marginLeft:20,
         marginRight:20,
         marginBottom:10,
         textAlign: 'center',
-        color: 'white',
+        color: '#fcebe8',
+        fontWeight:"500",
         fontSize: 16,
         alignItems:'center'
     },
@@ -49,7 +52,7 @@ export default StyleSheet.create({
         marginRight: 30,
         marginTop: 20,
         height: 48,
-        width:70,
+        width:200,
         borderRadius: 5,
         alignItems: "center",
         justifyContent: 'center'
@@ -58,19 +61,5 @@ export default StyleSheet.create({
         color: 'white',
         fontSize: 16,
         fontWeight: "bold"
-    },
-    footerView: {
-        flex: 1,
-        alignItems: "center",
-        marginTop: 20
-    },
-    footerText: {
-        fontSize: 16,
-        color: '#2e2e2d'
-    },
-    footerLink: {
-        color: "#580000ff",
-        fontWeight: "bold",
-        fontSize: 16
     }
 })

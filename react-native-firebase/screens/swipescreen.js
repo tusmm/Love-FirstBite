@@ -31,6 +31,10 @@ export function SwipeScreen(){
         rightSwipes.push(restaurant.name)
     };
 
+    const onPressed = restaurant => {
+        console.log('pressed: ', restaurant.name);
+    };
+
     return (
         <View style = {styles.card_container}>
             <GestureHandlerRootView>
@@ -39,6 +43,7 @@ export function SwipeScreen(){
                 renderItem={({item}) => <Card restaurant={item} />}
                 onSwipeLeft={onSwipeLeft}
                 onSwipeRight={onSwipeRight}
+                onPressed={onPressed}
                 />
              </GestureHandlerRootView>
         </View>
