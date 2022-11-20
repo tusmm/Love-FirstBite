@@ -18,7 +18,7 @@ const Gallery = (rest) => {
   return(
     <View style={styles.background}>
       <Rest name={rest.rest.name} />
-      <GridImageView data={rest.rest.imgarray}/>
+      <GridImageView data={rest.rest.imgarray} heightOfGridImage={300}/>
     </View>
   )
 };
@@ -38,19 +38,19 @@ export function RScreen() {
 }
 
 const styles = StyleSheet.create({
-    background: {
-      backgroundColor: 'white',
-      flex: 1,
-    },
-    words_background: {
-      backgroundColor: 'white',
-      flex: 0,
-    },
+  background: {
+    backgroundColor: '#b67c7cff',
+    flex: 1,
+  },
+  words_background: {
+    backgroundColor: '#b67c7cff',
+    flex: 0,
+  },
     headline_text: {
       color: 'white',
-      fontSize: 30,
+      fontSize: 20,
       fontWeight: 'bold',
-      marginTop: 50,
+      marginTop: "40%",
       marginLeft: 20,
     },
     explore_text: {

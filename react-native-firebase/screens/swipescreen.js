@@ -10,21 +10,24 @@ import { collection, doc, Firestore, setDoc } from "firebase/firestore";
 import { firebase } from '../src/firebase/config'
 
 class rest {
-    constructor (id, name, image, imgarray) {
+    constructor (id, name, image, imgarray, distance, price, wait) {
         this.id = id;
         this.name = name;
         this.image = image;
         this.imgarray = imgarray;
+        this.distance = distance;
+        this.price = price;
+        this.wait = wait;
     }
     toString() {
-        return this.id + ', ' + this.name + ', ' + this.image + ', ' + this.imgarray;
+        return this.id + ', ' + this.name + ', ' + this.image + ', ' + this.imgarray + ', ' + this.distance + ', ' + this.wait;
     }
 }
 
 const q = []
 firebase.firestore().collection("restaurants").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-        q.push(new rest(doc.id, doc.data().name, doc.data().imgarray[1], doc.data().imgarray));
+        q.push(new rest(doc.id, doc.data().name, doc.data().imgarray[1], doc.data().imgarray, doc.data().distance, doc.data().price, doc.data().wait));
     });
 });
 
