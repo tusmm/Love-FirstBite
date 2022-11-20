@@ -30,26 +30,26 @@ function Radio({ getValueRadio }) {
                 <View style={styles.radio}>
                     <Text style={styles.label}>$</Text>
                     <View style={styles.button}>
-                        <RadioButton color="#580000ff" value="first"/>
+                        <RadioButton color="#580000ff" value="1"/>
                     </View>
                 </View>
                 <View style={styles.radio}>
                     <Text style={styles.label}>$$</Text>
                     <View style={styles.button}>
-                    <RadioButton color="#580000ff" value="second" />
+                    <RadioButton color="#580000ff" value="2" />
                     </View>
                 </View>
                 <View style={styles.radio}>
                 
                     <Text style={styles.label}>$$$</Text>
                     <View style={styles.button}>
-                    <RadioButton color="#580000ff" value="third" />
+                    <RadioButton color="#580000ff" value="3" />
                     </View>
                 </View>
                 <View style={styles.radio}>
                     <Text style={styles.label}>$$$$</Text>
                     <View style={styles.button}>
-                    <RadioButton color="#580000ff" value="fourth" />
+                    <RadioButton color="#580000ff" value="4" />
                     </View>
                 </View>
             </View>

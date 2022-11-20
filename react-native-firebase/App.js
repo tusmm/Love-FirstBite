@@ -30,6 +30,7 @@ export default function App() {
             <Stack.Screen name="Form" component={FormScreen} />
             <Stack.Screen name="Restaurant" component={RScreen} />
             <Stack.Screen name="Swipe" component={SwipeScreen} />
+            <Stack.Screen name="Gallery" component={RScreen} />
           </>
         )}
       </Stack.Navigator>
