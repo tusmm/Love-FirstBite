@@ -68,6 +68,15 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Key Features
+* Login authentication
+* Food recommending system
+* Emoji support in preview :tada:
+* App will keep alive in tray for quick usage
+* Cross platform
+  - Windows, macOS and Linux ready.
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### Built With
@@ -77,7 +86,6 @@
 * [![Firebase][Firebase.com]][Firebase-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
@@ -90,7 +98,6 @@ To get a local copy up and running follow these simple example steps.
 
 This is an example of how to list things you need to use the software and how to install them.
 // list dependecies
-
 
 
 <!-- USAGE EXAMPLES -->
