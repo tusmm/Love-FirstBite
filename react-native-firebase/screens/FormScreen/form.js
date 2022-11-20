@@ -28,7 +28,7 @@ export default function FormScreen({navigation}) {
   function onFormSubmit(){
     console.log(radio)
     console.log(multiple)
-    navigation.navigate('Restaurant')
+    navigation.navigate('Swipe')
   }
 
   function getValueRadio(value) {
