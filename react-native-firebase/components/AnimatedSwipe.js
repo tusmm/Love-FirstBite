@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
+import { collection, doc, Firestore, getDocs, query, where } from "firebase/firestore"; 
+import { firebase } from '../src/firebase/config';
 
 import Animated, {
   useSharedValue,
@@ -11,6 +13,7 @@ import Animated, {
   runOnJS,
 } from 'react-native-reanimated';
 import {PanGestureHandler} from 'react-native-gesture-handler';
+
 const ROTATION = 60;
 const SWIPE_VELOCITY = 800;
 const deviceWidth = Dimensions.get('window').width

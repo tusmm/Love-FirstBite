@@ -52,7 +52,7 @@ class ImageLoader extends Component {
   }
 }
 
-export function OneTrueMatchScreen(){
+export function ResultsScreen(){
     return(
     <View style={styles.container}>
         <Image

@@ -22,6 +22,7 @@ export default function MatchScreen({navigation}){
         return Math.floor(Math.random() * (3));
     }
 
+    navigation.navigate('Results');
     
 }    
 
@@ -31,5 +32,5 @@ export function getChosen(){
 
 export function numSwipesMet(props){
     rightSwipes = props.rightSwipes;
-    navigation.navigate('MatchScreen');
+    navigation.navigate('Match');
 }

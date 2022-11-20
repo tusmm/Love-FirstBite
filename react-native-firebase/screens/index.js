@@ -5,3 +5,5 @@ export { default as HomeScreen } from './HomeScreen/HomeScreen'
 export { default as RegistrationScreen } from './RegistrationScreen/RegistrationScreen'
 
 export { default as FormScreen } from './FormScreen/form'
+
+export { default as MatchScreen } from './MatchScreen/MatchScreen'

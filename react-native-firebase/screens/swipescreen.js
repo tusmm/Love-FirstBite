@@ -8,6 +8,7 @@ import AnimatedStack from '../components/AnimatedSwipe';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import { collection, doc, Firestore, setDoc } from "firebase/firestore"; 
 import { firebase } from '../src/firebase/config'
+import { numSwipesMet } from './MatchScreen/MatchScreen'
 
 class rest {
     constructor (id, name, image, imgarray) {
@@ -62,6 +63,9 @@ export function SwipeScreen({navigation}){
     const onSwipeRight = restaurant => {
         console.log('swipe right: ', restaurant.name);
         rightSwipes.push(restaurant)
+        if(rightSwipes.length == 3){
+            numSwipesMet(rightSwipes={rightSwipes});
+        }
     };
 
     const onPressed = restaurant => {
