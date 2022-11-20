@@ -4,10 +4,17 @@ import { MultiSelectFoods } from '../../components/multiselect';
 import Slider from '@react-native-community/slider';
 import Radio from '../../components/radiobutton'
 import styles from './styles';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { collection, doc, Firestore, setDoc } from "firebase/firestore"; 
+import { firebase } from '../../src/firebase/config'
 
-
+var multiple = [];
 export default function FormScreen({navigation}) {
+  const userPref = collection(firebase.firestore(), "userPref");
   const [value, setValue] = useState(0);
+  const auth = getAuth();
+  const user = auth.currentUser;
+  const uid = user.uid;
   const items = [{
     id: "001",
     name: "American"
@@ -22,25 +29,33 @@ export default function FormScreen({navigation}) {
     name: "Japanese"
   }];
 
-  var multiple = []
+  var many = []
   var radio = 'first'
-  
-  function onFormSubmit(){
-    console.log(radio)
-    console.log(multiple)
-    navigation.navigate('Swipe')
-  }
+
 
   function getValueRadio(value) {
     radio = value;
   };
 
-  getValueMulti = (value) => {
-    multiple = []
-    value.forEach(function(number){
-      multiple.push(number)
-  });
+  function getValueMulti(value){
+    multiple = value
+    many = value
+    return multiple;
   };
+
+  function newFormSubmit(){
+    setTimeout(() => {
+      onFormSubmit()
+  }, 3);
+  }
+
+ async function onFormSubmit() {
+    console.log("submit")
+    console.log(multiple)
+    await setDoc(doc(userPref, uid), {
+      locations: multiple, cost: radio, hunger: value});
+    navigation.navigate('Swipe')
+  }
 
   return (
     <View style={styles.container}>
@@ -63,7 +78,7 @@ export default function FormScreen({navigation}) {
       <Text></Text>
       <Text style={styles.titlesmall} >How much do you want to spend?</Text>
       <Radio getValueRadio={getValueRadio}/>
-      <Pressable style={styles.button} onPress={() => onFormSubmit()}>
+      <Pressable style={styles.button} onPress={() => newFormSubmit()}>
       <Text style={styles.buttonTitle}>Submit</Text>
     </Pressable>
 

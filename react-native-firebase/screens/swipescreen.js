@@ -1,18 +1,21 @@
 import React from 'react';
-import {View, StyleSheet, Dimensions} from 'react-native';
+import {View, StyleSheet, Dimensions, Text, Image} from 'react-native';
 import Card from '../components/restaurantcard';
 import restaurants from '../data/restaurants';
 
 import AnimatedStack from '../components/AnimatedSwipe';
 
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
+const deviceWidth = Dimensions.get('window').width
+const deviceHeight = Dimensions.get('window').height
 
 const styles = StyleSheet.create({
     card_container: {
         justifyContent: 'center', 
         alignItems: 'center',
         flex: 1,
-        width: Dimensions.get('window').width,
+        width: deviceWidth,
+        backgroundColor: '#b67c7cff'
     },
 });
 

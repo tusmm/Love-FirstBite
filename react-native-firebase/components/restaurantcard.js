@@ -5,21 +5,21 @@ const deviceHeight = Dimensions.get('window').height
 const styles = StyleSheet.create({
     food_card: {
         width: deviceWidth * .8,
-        height: deviceHeight * .8,
+        height: deviceHeight * .7,
         borderRadius: 10, 
         backgroundColor: '#fefefe',
         elevation: 10,
     },
     food_image: {
         width: deviceWidth * .8, 
-        height: deviceHeight * .8,
+        height: deviceHeight * .7,
         borderRadius: 10,
         overflow: 'hidden', 
         justifyContent: 'flex-end',
     },
     restaurant_name: {
         fontSize: 30, 
-        color: 'white',
+        color: '#fff6f6ff',
         fontWeight: 'bold',
     },
     name_padding: {
