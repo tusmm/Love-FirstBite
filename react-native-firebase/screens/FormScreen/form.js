@@ -5,7 +5,7 @@ import Slider from '@react-native-community/slider';
 import Radio from '../../components/radiobutton'
 
 
-export default function FormScreen() {
+export default function FormScreen({navigation}) {
   const [value, setValue] = useState(0);
   const items = [{
     id: "001",
@@ -27,6 +27,7 @@ export default function FormScreen() {
   function onFormSubmit(){
     console.log(radio)
     console.log(multiple)
+    navigation.navigate('Restaurant')
   }
 
   function getValueRadio(value) {
