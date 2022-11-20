@@ -7,7 +7,7 @@ import restaurants from '../../data/restaurants';
 export function Match(){
     return(
         <View>
-            <Card name={resturant}/>
+            <Card name={restaurants[0]}/>
             <Text>It's a match!</Text>
         </View>
     )
